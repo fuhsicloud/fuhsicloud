@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: fuhsicloud
+spec:
+  gateways:
+    - kpaas-gateway
+  hosts:
+    - fuhsicloud.kpaas.nsini.com
+  http:
+    - route:
+      - destination:
+          host: fuhsicloud
+          port:
+            number: 8080
+        weight: 100
+      timeout: 60s
+      websocketUpgrade: true

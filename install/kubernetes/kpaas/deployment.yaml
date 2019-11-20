@@ -1,0 +1,91 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: fuhsicloud
+  labels:
+    app: fuhsicloud
+    language: Golang
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fuhsicloud
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: fuhsicloud
+        name: fuhsicloud
+    spec:
+      serviceAccountName: fuhsicloud
+      volumes:
+        - name: "tz-config"
+          hostPath:
+            path: "/usr/share/zoneinfo/Asia/Shanghai"
+        - name: fuhsicloud
+          configMap:
+            name: fuhsicloud
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - image: fuhsicloud/fuhsicloud
+          name: fuhsicloud
+          ports:
+            - name: http
+              containerPort: 8080
+          command:
+            - /go/bin/fuhsicloud
+            - start
+          args:
+            - -p
+            - :8080
+            - -c
+            - /etc/fuhsicloud/app.cfg
+            - -k
+            - /etc/fuhsicloud/config.yaml
+          resources:
+            requests:
+              memory: 128Mi
+            limits:
+              memory: 256Mi
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+            - name: INSTANCE_IP
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: status.podIP
+          volumeMounts:
+            - name: tz-config
+              mountPath: /etc/localtime
+            - name: fuhsicloud
+              mountPath: /etc/fuhsicloud/app.cfg
+              readOnly: true
+              subPath: app.cfg
+            - name: fuhsicloud
+              mountPath: /etc/fuhsicloud/config.yaml
+              readOnly: true
+              subPath: config.yaml
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /metrics
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 30
