@@ -43,7 +43,13 @@ $ cd fuhsicloud
 
     - 将连接Kubernets的kubeconfig文件放到该项目目录
 
-3. docker-compose 启动
+3. 一般启动
+
+```
+$ go run ./main.go start -p :8080 -c ./conf/app.cfg -k ./conf/config
+```
+
+4. docker-compose 启动
 
 ```
 $ cd install/docker-compose
