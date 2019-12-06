@@ -9,11 +9,11 @@ GOGET = $(GOCMD) get
 GORUN = $(GOCMD) run
 BINARY_UNIX = $(BIN)_unix
 PID = .pid
-HUB_ADDR = hub.kpaas.nsini.com
+HUB_ADDR = hub.fuhsipaas.yf-micro.com
 DOCKER_USER =
 DOCKER_PWD =
 TAG = v0.2.3
-NAMESPACE = kpaas
+NAMESPACE = fuhsipaas
 PWD = $(shell pwd)
 
 start:
@@ -46,4 +46,4 @@ push:
 	docker push $(HUB_ADDR)/$(NAMESPACE)/$(APPNAME):$(TAG)
 
 run:
-	GO111MODULE=on $(GORUN) ./main.go start -p :8080 -c ./app.cfg -k config.yaml
+	GO111MODULE=on $(GORUN) ./main.go start -p :8080 -c ./conf/app.cfg -k ./conf/config.yaml
