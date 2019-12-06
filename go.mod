@@ -13,6 +13,7 @@ require (
 	github.com/elazarl/goproxy v0.0.0-20190703090003-6125c262ffb0 // indirect
 	github.com/elazarl/goproxy/ext v0.0.0-20190703090003-6125c262ffb0 // indirect
 	github.com/fastly/go-utils v0.0.0-20180712184237-d95a45783239 // indirect
+	github.com/fuhsicloud/request v1.0.0
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-kit/kit v0.8.0
 	github.com/go-redis/redis v6.15.2+incompatible
@@ -31,7 +32,6 @@ require (
 	github.com/jinzhu/gorm v1.9.8
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/jtblin/go-ldap-client v0.0.0-20170223121919-b73f66626b33
-	github.com/fuhsicloud/request v0.2.1
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/lestrrat-go/file-rotatelogs v2.2.0+incompatible
 	github.com/lestrrat-go/strftime v0.0.0-20190725011945-5c849dd2c51d // indirect

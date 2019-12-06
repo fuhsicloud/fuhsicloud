@@ -18,8 +18,6 @@ fuhsicloud是一个基于了kubernetes的应用管理系统，通过可视化的
 
 ### 安装教程
 
-
-
 ### 依赖
 
 - Golang 1.12+ [安装手册](https://golang.org/dl/)
@@ -43,15 +41,34 @@ $ cd fuhsicloud
 
     - 将连接Kubernets的kubeconfig文件放到该项目目录
 
-3. docker-compose 启动
+3. 一般启动
+
+```
+$ go run ./main.go start -p :8080 -c ./conf/app.cfg -k ./conf/config
+```
+
+4. docker-compose 启动
 
 ```
 $ cd install/docker-compose
 $ docker-compose up
 ```
 
-4. make 启动
+5. make 启动
 
 ```
 $ make run
+```
+
+6. 打包
+windows 下打包Linux包   
+```
+SET CGO_ENABLED=0
+SET GOOS=linux
+SET GOARCH=amd64
+go build
+```
+mac 下打包
+```
+ CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build  ./main.go -o fuhsicloud
 ```
