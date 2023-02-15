@@ -15,11 +15,10 @@ require (
 	github.com/fastly/go-utils v0.0.0-20180712184237-d95a45783239 // indirect
 	github.com/fuhsicloud/request v1.0.0
 	github.com/ghodss/yaml v1.0.0
-	github.com/go-kit/kit v0.8.0
+	github.com/go-kit/kit v0.9.0
 	github.com/go-redis/redis v6.15.2+incompatible
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/google/go-github/v26 v26.1.3
-	github.com/google/gofuzz v1.0.0 // indirect
 	github.com/google/uuid v1.1.1
 	github.com/googleapis/gnostic v0.3.0 // indirect
 	github.com/gorilla/mux v1.7.2
@@ -32,19 +31,18 @@ require (
 	github.com/jinzhu/gorm v1.9.8
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/jtblin/go-ldap-client v0.0.0-20170223121919-b73f66626b33
-	github.com/kr/pretty v0.1.0 // indirect
 	github.com/lestrrat-go/file-rotatelogs v2.2.0+incompatible
 	github.com/lestrrat-go/strftime v0.0.0-20190725011945-5c849dd2c51d // indirect
-	github.com/pkg/errors v0.8.1
-	github.com/prometheus/client_golang v1.0.0
-	github.com/sirupsen/logrus v1.2.0
+	github.com/pkg/errors v0.9.1
+	github.com/prometheus/client_golang v1.11.1
+	github.com/sirupsen/logrus v1.6.0
 	github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a // indirect
 	github.com/spf13/cobra v0.0.5
 	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
 	github.com/tebeka/strftime v0.1.3 // indirect
 	github.com/xanzy/go-gitlab v0.18.0
 	github.com/yijizhichang/wechat-sdk v0.1.3
-	golang.org/x/crypto v0.0.0-20190325154230-a5d413f7728c
+	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 	golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421
 	golang.org/x/time v0.0.0-20181108054448-85acf8d2951c
 	gopkg.in/asn1-ber.v1 v1.0.0-20181015200546-f715ec2f112d // indirect
@@ -52,7 +50,7 @@ require (
 	gopkg.in/igm/sockjs-go.v2 v2.0.1
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/ldap.v2 v2.5.1 // indirect
-	gopkg.in/yaml.v2 v2.2.2
+	gopkg.in/yaml.v2 v2.3.0
 	k8s.io/api v0.0.0-20180521142803-feb48db456a5
 	k8s.io/apimachinery v0.0.0-20180515182440-31dade610c05
 	k8s.io/client-go v0.0.0-20180521144600-29ae1f00c3d8
