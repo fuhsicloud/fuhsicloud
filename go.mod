@@ -52,9 +52,9 @@ require (
 	gopkg.in/igm/sockjs-go.v2 v2.0.1
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/ldap.v2 v2.5.1 // indirect
-	gopkg.in/yaml.v2 v2.2.2
+	gopkg.in/yaml.v2 v2.2.4
 	k8s.io/api v0.0.0-20180521142803-feb48db456a5
-	k8s.io/apimachinery v0.0.0-20180515182440-31dade610c05
+	k8s.io/apimachinery v0.15.7
 	k8s.io/client-go v0.0.0-20180521144600-29ae1f00c3d8
 
 )
