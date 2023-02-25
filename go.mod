@@ -44,7 +44,7 @@ require (
 	github.com/tebeka/strftime v0.1.3 // indirect
 	github.com/xanzy/go-gitlab v0.18.0
 	github.com/yijizhichang/wechat-sdk v0.1.3
-	golang.org/x/crypto v0.0.0-20190325154230-a5d413f7728c
+	golang.org/x/crypto v0.1.0
 	golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421
 	golang.org/x/time v0.0.0-20181108054448-85acf8d2951c
 	gopkg.in/asn1-ber.v1 v1.0.0-20181015200546-f715ec2f112d // indirect
